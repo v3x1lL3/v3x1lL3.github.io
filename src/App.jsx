@@ -65,6 +65,15 @@ export default function Portfolio() {
     futureOutlook: 'Looking ahead, I am excited about building a career in technology where I can apply my knowledge in solving real-world problems. College has prepared me by giving me both a technical foundation and the confidence to face unfamiliar challenges. I am most excited about continuously learning—adapting to new threats, technologies, and systems as the digital landscape evolves. I plan to apply what I have learned by practicing these principles, strengthening infrastructures, and contributing to safer digital environments. My college experiences taught me that preparation is not about knowing everything, but about being ready to learn, adapt, and act responsibly. With this mindset, I feel prepared to move forward into the professional world and grow further.',
   };
 
+  const conversionStory = {
+    momentsThatChangedYou:
+      'In my college journey, I learned so much about myself and my capabilities. Being able to overcome challenges and push myself to my limits taught me that I can do more than I think I can. I also learned that I can be a leader and a team player when I work with others. Certain events in my life where I had to adapt and grow from that experience became the fundamental aspect of my conversion story. This includes events within Ateneo such as working in productions, the struggles that we had to face during our project in thesis, and being able to fail in certain school activities that led me where I am today. As an Information Technology student, I made the right choice of pursuing this field because it is a field that is constantly evolving and growing, and I want to be a part of that growth. These past experiences gave me a deeper connection and foundation, giving me the motivation and persistence to continue pursuing my goals and aspirations.',
+    interiorStruggleAndInsight:
+      'When it comes to the interior struggle that I had to face in my life and what gave me the insight to become who I am today, I was that type of person who gets frustrated easily and get angry whenever I fail or something does not go my way. This made me realize that I need to be more patient and understanding with myself and others. I also learned that I need to be more open to new ideas and perspectives, and not be afraid to fail. This experience helped me understand that progress is not always immediate, but consistency and effort eventually lead to improvement. It made me appreciate the journey rather than the destination, and this made me rewire my mindset and perspective on how I view things in different aspects of my life. Until now, I apply this method to myself and to become rational first in a certain situation, then act accordingly.',
+    newWayOfSeeing:
+      'The struggle taught me to stop treating setbacks as the end of the story.\nInstead of reacting automatically, I learned to pause, breathe, and ask what this moment is trying to teach me.\nOver time, my mind started to work differently: I looked for the lesson, identified what I could control, and accepted what I still needed to grow.\nThat shift gave me a kind of quiet freedom, because I no longer saw mistakes as proof that I was incapable.\nThey became signals that I could adjust, improve, and try again with clearer direction.\nNow, I aim to become more grounded and discerning by choosing rational thoughts first, then acting from understanding rather than frustration.\nI’m also becoming more aligned with the person I want to be—someone who handles failure with humility, respects the process, and keeps moving forward one step at a time.',
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -249,6 +258,46 @@ export default function Portfolio() {
           </div>
         );
 
+      case 'conversion':
+        return (
+          <div className="space-y-12 animate-fadeIn">
+            <div className="text-center space-y-4">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                Conversion Story
+              </h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-purple-300 mb-4">
+                  Moments That Changed Me
+                </h3>
+                <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+                  {conversionStory.momentsThatChangedYou}
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-pink-300 mb-4">
+                  The Interior Struggle and Insight
+                </h3>
+                <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+                  {conversionStory.interiorStruggleAndInsight}
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                  A New Way of Seeing
+                </h3>
+                <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+                  {conversionStory.newWayOfSeeing}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+
       default:
         return null;
     }
@@ -318,6 +367,18 @@ export default function Portfolio() {
               >
                 <Lightbulb className="w-4 h-4" />
                 <span>Reflections</span>
+              </button>
+
+              <button
+                onClick={() => setCurrentPage('conversion')}
+                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                  currentPage === 'conversion'
+                    ? 'bg-white/20 backdrop-blur-sm border border-white/30'
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10'
+                }`}
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Conversion Story</span>
               </button>
             </div>
           </nav>
