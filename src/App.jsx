@@ -3,10 +3,11 @@ import { Camera, Mail, Facebook, Instagram, Home, BookOpen, TrendingUp, Lightbul
 
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState('home');
+  const imagePath = (fileName) => `${import.meta.env.BASE_URL}images/${fileName}`;
 
   // Edit these values directly in the code
   const profileData = {
-    imageUrl: '/images/profile.jpg', // Add your image URL here
+    imageUrl: imagePath('profile.jpg'), // Add your image filename here
     name: 'Dennis Deevo Guevarra',
     title: 'Ateneo Journey Map',
     bio: 'Hello there! You can call me Deevo, I am an aspiring Information Technology professional in this specific field and I always wanted to tinker around when it comes to technology. What drives me the most is my sole purpose in life to become better as an individual, so that I can help people around me, especially those who are in need the most. I am also a musician who performs in various events in Ateneo, and other external events as well that helps me hone my skills when performing. Being a passionate kid back then until now, I was also influenced by playing video games that gave me motive on what type of field I was going to focus on. College made me realize a lot of things, whether it is positive or negative, I always think of it as an opportunity for growth no matter what experiences I am facing in life.',
@@ -22,17 +23,17 @@ export default function Portfolio() {
   // Edit your college experiences here
   const collegeExperiences = [
     {
-      imageUrl: '/images/mv.jpg', // Add experience image URL
+      imageUrl: imagePath('mv.jpg'), // Add experience image filename
       title: 'Ateneo Repertory Company MV \'23',
       description: 'This was my first memorable college experience in Ateneo. We had the opportunity to represent the university and created a music video for Ateneo First Year Onboarding Program 2023. I made some friends and bandmates along the way with the same passion as I am. It showed me a path on how music is an art for all of us and can be welcoming to the community.',
     },
     {
-      imageUrl: '/images/asp.jpeg', // Add experience image URL
+      imageUrl: imagePath('asp.jpeg'), // Add experience image filename
       title: 'Ateneo SAMAHAN Productions',
       description: 'As I journey in my college life, I also became part of the SAMAHAN team in event production. We handle events in the university to be able to showcase a prestige experience for all students, coordinators, and employees working in Ateneo to give them cherishable moments along the way. I met these people who are professionals that motivated me into this field and serve the Ateneo community.',
     },
     {
-      imageUrl: '/images/echoes.png', // Add experience image URL
+      imageUrl: imagePath('echoes.png'), // Add experience image filename
       title: 'Echoes MV \'24',
       description: 'This was one of the most memorable moments I experienced in my college journey because I was the project manager and the band head of Echoes. It started off with a concept in mind on how we would want to properly execute this music video shoot, including the arrangement, venue, theme, and Take One production team during this event. We were also recognized by our favorite artist Sunkissed Lola.',
     },
@@ -41,17 +42,17 @@ export default function Portfolio() {
   // Edit your plans and growth sections here
   const plansAndGrowth = [
     {
-      imageUrl: '/images/cybersecurity.jpg', // Add plan/growth image URL
+      imageUrl: imagePath('cybersecurity.jpg'), // Add plan/growth image filename
       title: 'Short-term Goals',
       description: 'Currently, the skills I am pursuing on is learning how to code and understanding different systems and their functionalities. This can help both my academic and personal goals that becomes a part of my skillset. With this type of skill, I can learn how to think critically and formulate solutions or problem-solving skills as an individual who is pursuing Information Technology.',
     },
     {
-      imageUrl: '/images/thesis.jpeg', // Add plan/growth image URL
+      imageUrl: imagePath('thesis.jpeg'), // Add plan/growth image filename
       title: 'Career Aspirations',
       description: 'As an Information Technology student, I aspire to become a network engineer or a cybersecurity specialist who manages different systems for both hardware and software. I want to enhance my skills and creativity when it comes to solving real-world issues in the technology industry. Personally, innovation is the key to turning constraints into opportunities and ideas into real, lasting impact.',
     },
     {
-      imageUrl: '/images/graduation.jpeg', // Add plan/growth image URL
+      imageUrl: imagePath('graduation.jpeg'), // Add plan/growth image filename
       title: 'Personal Development',
       description: 'My commitment to academic learning and self-improvement has always been persistent ever since I became part of the Ateneo de Davao University. I learned lessons with my peers and they helped me strive to where I am today. After I graduate in this university, I want to learn more about about the world and what they can offer in my own personal journey and development.',
     },
@@ -72,6 +73,34 @@ export default function Portfolio() {
       'When it comes to the interior struggle that I had to face in my life and what gave me the insight to become who I am today, I was that type of person who gets frustrated easily and get angry whenever I fail or something does not go my way. This made me realize that I need to be more patient and understanding with myself and others. I also learned that I need to be more open to new ideas and perspectives, and not be afraid to fail. This experience helped me understand that progress is not always immediate, but consistency and effort eventually lead to improvement. It made me appreciate the journey rather than the destination, and this made me rewire my mindset and perspective on how I view things in different aspects of my life. Until now, I apply this method to myself and to become rational first in a certain situation, then act accordingly.',
     newWayOfSeeing:
       'The struggle taught me to stop treating setbacks as the end of the story.\nInstead of reacting automatically, I learned to pause, breathe, and ask what this moment is trying to teach me.\nOver time, my mind started to work differently: I looked for the lesson, identified what I could control, and accepted what I still needed to grow.\nThat shift gave me a kind of quiet freedom, because I no longer saw mistakes as proof that I was incapable.\nThey became signals that I could adjust, improve, and try again with clearer direction.\nNow, I aim to become more grounded and discerning by choosing rational thoughts first, then acting from understanding rather than frustration.\nI’m also becoming more aligned with the person I want to be—someone who handles failure with humility, respects the process, and keeps moving forward one step at a time.',
+  };
+
+  const passionPlan = {
+    intro:
+      'This final assessment gathers the most meaningful fruits of my Seniors\' Integration Program journey. It invites me to reflect deeply, dream boldly, pray sincerely, and articulate the kind of person I hope to become.',
+    sections: [
+      {
+        title: '1) Personal Mission Statement',
+        imageUrl: imagePath('mission.jpeg'),
+        placeholderLabel: 'Add mission image',
+        content:
+          'I am becoming a person who combines technical excellence, service, and faith-driven purpose. What drives me is the desire to use my skills in technology to help people, strengthen communities, and create solutions that are both useful and ethical. I choose to live by integrity, discipline, humility, compassion, and continuous learning. I hope to make an impact by building secure and reliable systems, leading with responsibility, and inspiring others through both my work and character.',
+      },
+      {
+        title: '2) Prayer for My Future Self',
+        imageUrl: imagePath('praying.jpg'),
+        placeholderLabel: 'Add prayer image',
+        content:
+          'Lord, guide me as I step into the next years of my life. Strengthen my faith when I feel uncertain, and remind me that every challenge can become a path to growth. Teach me to be patient, wise, and courageous in every decision I make. Bless the dreams you have placed in my heart, and help me pursue them with humility and perseverance. Form me into a person who serves with love, leads with integrity, and honors You in both success and struggle. Amen.',
+      },
+      {
+        title: '3) 10–20 Year Passion Plan',
+        imageUrl: imagePath('data-center.jpg'),
+        placeholderLabel: 'Add roadmap image',
+        content:
+          'Envisioned Vocation: To become a network engineer or cybersecurity specialist who protects systems and supports organizations through secure digital infrastructure.\n\nRoadmap and Milestones:\n- 1-3 years: Graduate, strengthen core technical foundations, and build a strong portfolio through projects and certifications.\n- 3-7 years: Gain industry experience, specialize in networking and cybersecurity, and contribute to high-impact teams.\n- 7-12 years: Take leadership roles, mentor younger professionals, and handle larger systems with strategic responsibility.\n- 12-20 years: Build a purpose-driven career that combines technical mastery, ethical leadership, and meaningful service.\n\nValues I will uphold: Integrity, responsibility, resilience, discipline, faith, and service.\nLife I hope to build: A life rooted in purpose and balance, where my profession, relationships, and personal growth all reflect commitment to excellence and compassion.',
+      },
+    ],
   };
 
   const renderPage = () => {
@@ -298,6 +327,53 @@ export default function Portfolio() {
           </div>
         );
 
+      case 'passion':
+        return (
+          <div className="space-y-12 animate-fadeIn">
+            <div className="text-center space-y-4">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                Your Passion Plan
+              </h2>
+              <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                {passionPlan.intro}
+              </p>
+            </div>
+
+            <div className="grid gap-8">
+              {passionPlan.sections.map((section, index) => (
+                <div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                      {section.imageUrl ? (
+                        <img
+                          src={section.imageUrl}
+                          alt={section.title}
+                          className="w-full h-72 object-cover rounded-2xl"
+                        />
+                      ) : (
+                        <div className="w-full h-72 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex flex-col items-center justify-center border-2 border-white/10">
+                          <Camera className="w-12 h-12 text-white/30 mb-3" />
+                          <p className="text-sm text-white/60">{section.placeholderLabel}</p>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-bold text-purple-300">{section.title}</h3>
+                      <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+                        {section.content}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+
       default:
         return null;
     }
@@ -379,6 +455,18 @@ export default function Portfolio() {
               >
                 <BookOpen className="w-4 h-4" />
                 <span>Conversion Story</span>
+              </button>
+
+              <button
+                onClick={() => setCurrentPage('passion')}
+                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                  currentPage === 'passion'
+                    ? 'bg-white/20 backdrop-blur-sm border border-white/30'
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10'
+                }`}
+              >
+                <TrendingUp className="w-4 h-4" />
+                <span>Your Passion Plan</span>
               </button>
             </div>
           </nav>
